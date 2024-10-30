@@ -55,7 +55,8 @@ for i in range(0, leng):
         matches = re.findall(pattern, file_content)
         doc.sents[i].syntax.print()
         count = len(matches)
+        word_count = len(doc.sents[i].tokens)
         print(f"Количество пересеченй: {count}")
-        # print(doc.sents[i].syntax.as_json)
+        print(f"Коэфициент: {count/word_count}")
     except ValueError as e:
         print("Error")
